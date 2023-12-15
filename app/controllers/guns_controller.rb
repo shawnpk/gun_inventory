@@ -65,6 +65,8 @@ class GunsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def gun_params
-      params.require(:gun).permit(:make, :model, :name, :ammunition_type, :serial_number, :production_year, :purchase_date, :purchase_price, :purchase_location, :url)
+      params.require(:gun).permit(:make, :model, :name, :ammunition_type, :serial_number,
+                                  :production_year, :purchase_date, :purchase_price,
+                                  :purchase_location, :url, :photo)
     end
 end
