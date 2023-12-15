@@ -1,0 +1,57 @@
+<div id="<%= dom_id gun %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Make:</strong>
+    <%= gun.make %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Model:</strong>
+    <%= gun.model %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= gun.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Ammunition type:</strong>
+    <%= gun.ammunition_type %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Serial number:</strong>
+    <%= gun.serial_number %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Production year:</strong>
+    <%= gun.production_year %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Purchase date:</strong>
+    <%= gun.purchase_date %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Purchase price:</strong>
+    <%= gun.purchase_price %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Purchase location:</strong>
+    <%= gun.purchase_location %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Url:</strong>
+    <%= gun.url %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this gun", gun, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this gun", edit_gun_path(gun), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
