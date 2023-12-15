@@ -3,7 +3,7 @@ class GunsController < ApplicationController
 
   # GET /guns or /guns.json
   def index
-    @guns = Gun.all
+    @guns = current_user.guns
   end
 
   # GET /guns/1 or /guns/1.json
@@ -21,7 +21,7 @@ class GunsController < ApplicationController
 
   # POST /guns or /guns.json
   def create
-    @gun = Gun.new(gun_params)
+    @gun = current_user.guns.new(gun_params)
 
     respond_to do |format|
       if @gun.save

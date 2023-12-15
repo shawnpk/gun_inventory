@@ -1,57 +1,44 @@
-<div id="<%= dom_id gun %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Make:</strong>
-    <%= gun.make %>
-  </p>
+<div class="px-4 sm:px-6 lg:px-8 w-full">
+  <div class="mt-8 flow-root">
+    <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+        <table class="min-w-full divide-y divide-gray-300">
+          <thead>
+            <tr>
+              <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Name</th>
+              <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-3">Make</th>
+              <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Model</th>
+              <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Ammunition Type</th>
+              <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Serial Number</th>
+              <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Production Year</th>
+              <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Purchase Date</th>
+              <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Purchase Price</th>
+              <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Purchase Location</th>
+              <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-3">
+                <span class="sr-only">Edit</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white">
+            <tr class="even:bg-gray-50">
+              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 underline"><%= link_to gun.name, gun %></td>
+              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= gun.make %></td>
+              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= gun.model %></td>
+              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= gun.ammunition_type %></td>
+              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= gun.serial_number %></td>
+              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= gun.production_year %></td>
+              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= gun.purchase_date %></td>
+              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= number_to_currency(gun.purchase_price) %></td>
+              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= gun.purchase_location %></td>
+              <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
+                <a href="#" class="text-indigo-600 hover:text-indigo-900"><%= link_to 'Edit', edit_gun_path(gun) %><span class="sr-only">, <%= gun.make %></span></a>
+              </td>
+            </tr>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Model:</strong>
-    <%= gun.model %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= gun.name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Ammunition type:</strong>
-    <%= gun.ammunition_type %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Serial number:</strong>
-    <%= gun.serial_number %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Production year:</strong>
-    <%= gun.production_year %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Purchase date:</strong>
-    <%= gun.purchase_date %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Purchase price:</strong>
-    <%= gun.purchase_price %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Purchase location:</strong>
-    <%= gun.purchase_location %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Url:</strong>
-    <%= gun.url %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this gun", gun, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Edit this gun", edit_gun_path(gun), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+            <!-- More people... -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
