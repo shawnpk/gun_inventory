@@ -2,5 +2,7 @@ Rails.application.routes.draw do
   root 'guns#index'
 
   devise_for :users
-  resources :guns
+  resources :guns do
+    resources :specs
+  end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_15_024043) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_18_021325) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +59,29 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_15_024043) do
     t.index ["user_id"], name: "index_guns_on_user_id"
   end
 
+  create_table "specs", force: :cascade do |t|
+    t.string "barrel_length"
+    t.string "barrel_type"
+    t.string "rate_of_twist"
+    t.string "overall_length"
+    t.string "weight"
+    t.string "receiver_finish"
+    t.string "rear_sight"
+    t.string "front_sight"
+    t.string "scopeability"
+    t.string "scope_mount_type"
+    t.string "stock_material"
+    t.string "buttplate_pad"
+    t.string "length_of_pull"
+    t.string "safety"
+    t.string "best_uses"
+    t.text "notes"
+    t.bigint "gun_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gun_id"], name: "index_specs_on_gun_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -74,4 +97,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_15_024043) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "guns", "users"
+  add_foreign_key "specs", "guns"
 end
