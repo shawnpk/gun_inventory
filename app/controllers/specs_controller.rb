@@ -14,6 +14,17 @@ class SpecsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @gun.spec.update(spec_params)
+      redirect_to gun_path(@gun)
+    else
+      render :edit
+    end
+  end
+
   private
   def set_gun
     @gun = Gun.find(params[:gun_id])

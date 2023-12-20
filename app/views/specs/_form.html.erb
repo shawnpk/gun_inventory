@@ -1,7 +1,7 @@
-<%= form_with(model: [gun, spec], class: "contents") do |form| %>
-  <% if spec.errors.any? %>
+<%= form_with(model: [gun, gun.spec], class: "contents") do |form| %>
+  <% if gun.spec.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(spec.errors.count, "error") %> prohibited this spec from being saved:</h2>
+      <h2><%= pluralize(gun.spec.errors.count, "error") %> prohibited this spec from being saved:</h2>
 
       <ul>
         <% spec.errors.each do |error| %>
@@ -47,24 +47,48 @@
   </div>
 
   <div class="my-5">
-    <%= form.label :rate_of_twist %>
-    <%= form.text_field :rate_of_twist, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-
-  <div class="my-5">
-    <%= form.label :barrel_length %>
-    <%= form.text_field :make, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.label :front_sight %>
+    <%= form.text_field :front_sight, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :barrel_length %>
-    <%= form.text_field :make, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.label :scopeability %>
+    <%= form.text_field :scopability, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :barrel_length %>
-    <%= form.text_field :make, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.label :scope_mount_type %>
+    <%= form.text_field :scope_mount_type, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :stock_material %>
+    <%= form.text_field :stock_material, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :buttplate_pad %>
+    <%= form.text_field :buttplate_pad, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :length_of_pull %>
+    <%= form.text_field :length_of_pull, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :safety %>
+    <%= form.text_field :safety, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :best_uses %>
+    <%= form.text_field :best_uses, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :notes %>
+    <%= form.text_area :notes, rows: 10, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="inline">
