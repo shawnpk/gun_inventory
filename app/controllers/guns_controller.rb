@@ -67,6 +67,6 @@ class GunsController < ApplicationController
     def gun_params
       params.require(:gun).permit(:manufacturer, :model, :name, :ammunition_type, :serial_number,
                                   :production_year, :purchase_date, :purchase_price,
-                                  :purchase_location, :url, :photo)
+                                  :purchase_location, :url, :photo, :gun_type)
     end
 end
