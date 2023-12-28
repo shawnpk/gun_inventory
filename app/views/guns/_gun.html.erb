@@ -42,102 +42,105 @@
   </div>
 </div>
 
-<div class='mt-7 ml-1'>
-  <h2 class='text-xl font-bold ml-10'>Specs</h2>
-  <hr class='m-5 text-gray-500 md:w-[96%]'>
-</div>
 
-<div class='columns-1 md:columns-2 ml-9 w-10/12 md:w-11/12 md:ml-12'>
-  <div class='w-full'>
-    <table class="w-full">
-      <tbody class="bg-white">
-        <tr class='bg-gray-50 h-14 max-h-14'>
-          <td class='text-gray-900 font-bold pl-3'>Barrel Type</td>
-          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.barrel_type %></td>
-        </tr>
-        <tr class="h-14 max-h-14">
-          <td class='text-gray-900 font-bold pl-3'>Best Uses</td>
-          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.best_uses %></td>
-        </tr>
-        <tr class='bg-gray-50 h-14 max-h-14'>
-          <td class='text-gray-900 font-bold pl-3'>Buttplate Pad</td>
-          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.buttplate_pad %></td>
-        </tr>
-        <tr class='h-14 max-h-14'>
-          <td class='text-gray-900 font-bold pl-3'>Front Sight</td>
-          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.front_sight %></td>
-        </tr>
-        <tr class="bg-gray-50 h-14 max-h-14">
-          <td class='text-gray-900 font-bold pl-3'>Gun Barrel</td>
-          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.barrel_length %></td>
-        </tr>
-        <tr class="h-14 max-h-14">
-          <td class='text-gray-900 font-bold pl-3'>Length of Pull</td>
-          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.length_of_pull %></td>
-        </tr>
-        <tr class='bg-gray-50 h-14 max-h-14'>
-          <td class='text-gray-900 font-bold pl-3'>Overall Length</td>
-          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.overall_length %></td>
-        </tr>
-        <tr class="h-14 max-h-14">
-          <td class='text-gray-900 font-bold pl-3'>Rate of Twist</td>
-          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.rate_of_twist %></td>
-        </tr>
-      </tbody>
-    </table>
+<% if gun.spec.present? %>
+  <div class='mt-7 ml-1'>
+    <h2 class='text-xl font-bold ml-10'>Specs</h2>
+    <hr class='m-5 text-gray-500 md:w-[96%]'>
   </div>
 
-  <div class='w-full'>
-    <table class="w-full">
-      <tbody class="bg-white">
-        <tr class="bg-gray-50 h-14 max-h-14">
-          <td class='text-gray-900 font-bold pl-3'>Rear Sight</td>
-          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.rear_sight %></td>
-        </tr>
-        <tr class='h-14 max-h-14'>
-          <td class='text-gray-900 font-bold pl-3'>Receiver Finish</td>
-          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.receiver_finish %></td>
-        </tr>
-        <tr class='bg-gray-50 h-14 12max-h-14'>
-          <td class='text-gray-900 font-bold pl-3'>Safety</td>
-          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.safety %></td>
-        </tr>
-        <tr class='h-14 max-h-14'>
-          <td class='text-gray-900 font-bold pl-3'>Scope Mount Type</td>
-          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.scope_mount_type %></td>
-        </tr>
-        <tr class="bg-gray-50 h-14 max-h-14">
-          <td class='text-gray-900 font-bold pl-3'>Scopeability</td>
-          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.scopeability %></td>
-        </tr>
-        <tr class="h-14 max-h-14">
-          <td class='text-gray-900 font-bold pl-3'>Stock Material</td>
-          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.stock_material %></td>
-        </tr>
-        <tr class="bg-gray-50 h-14 max-h-14">
-          <td class='text-gray-900 font-bold pl-3'>Weight</td>
-          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.weight %></td>
-        </tr>
-        <tr class="h-14 max-h-14">
-          <td class='text-gray-900 font-bold pl-3'></td>
-          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<% if gun.spec.notes.present? %>
-  <div class='columns-1 md:columns-2 ml-9 w-10/12 md:w-11/12 md:ml-12 overflow-x-auto'>
+  <div class='columns-1 md:columns-2 ml-9 w-10/12 md:w-11/12 md:ml-12'>
     <div class='w-full'>
       <table class="w-full">
         <tbody class="bg-white">
-          <tr class="bg-gray-50">
-            <td class='text-gray-900 font-bold pl-3'>Notes</td>
-            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.notes %></td>
+          <tr class='bg-gray-50 h-14 max-h-14'>
+            <td class='text-gray-900 font-bold pl-3'>Barrel Type</td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.barrel_type %></td>
+          </tr>
+          <tr class="h-14 max-h-14">
+            <td class='text-gray-900 font-bold pl-3'>Best Uses</td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.best_uses %></td>
+          </tr>
+          <tr class='bg-gray-50 h-14 max-h-14'>
+            <td class='text-gray-900 font-bold pl-3'>Buttplate Pad</td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.buttplate_pad %></td>
+          </tr>
+          <tr class='h-14 max-h-14'>
+            <td class='text-gray-900 font-bold pl-3'>Front Sight</td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.front_sight %></td>
+          </tr>
+          <tr class="bg-gray-50 h-14 max-h-14">
+            <td class='text-gray-900 font-bold pl-3'>Gun Barrel</td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.barrel_length %></td>
+          </tr>
+          <tr class="h-14 max-h-14">
+            <td class='text-gray-900 font-bold pl-3'>Length of Pull</td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.length_of_pull %></td>
+          </tr>
+          <tr class='bg-gray-50 h-14 max-h-14'>
+            <td class='text-gray-900 font-bold pl-3'>Overall Length</td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.overall_length %></td>
+          </tr>
+          <tr class="h-14 max-h-14">
+            <td class='text-gray-900 font-bold pl-3'>Rate of Twist</td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.rate_of_twist %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class='w-full'>
+      <table class="w-full">
+        <tbody class="bg-white">
+          <tr class="bg-gray-50 h-14 max-h-14">
+            <td class='text-gray-900 font-bold pl-3'>Rear Sight</td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.rear_sight %></td>
+          </tr>
+          <tr class='h-14 max-h-14'>
+            <td class='text-gray-900 font-bold pl-3'>Receiver Finish</td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.receiver_finish %></td>
+          </tr>
+          <tr class='bg-gray-50 h-14 12max-h-14'>
+            <td class='text-gray-900 font-bold pl-3'>Safety</td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.safety %></td>
+          </tr>
+          <tr class='h-14 max-h-14'>
+            <td class='text-gray-900 font-bold pl-3'>Scope Mount Type</td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.scope_mount_type %></td>
+          </tr>
+          <tr class="bg-gray-50 h-14 max-h-14">
+            <td class='text-gray-900 font-bold pl-3'>Scopeability</td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.scopeability %></td>
+          </tr>
+          <tr class="h-14 max-h-14">
+            <td class='text-gray-900 font-bold pl-3'>Stock Material</td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.stock_material %></td>
+          </tr>
+          <tr class="bg-gray-50 h-14 max-h-14">
+            <td class='text-gray-900 font-bold pl-3'>Weight</td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.weight %></td>
+          </tr>
+          <tr class="h-14 max-h-14">
+            <td class='text-gray-900 font-bold pl-3'></td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'></td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
+
+  <% if gun.spec.notes.present? %>
+    <div class='columns-1 md:columns-2 ml-9 w-10/12 md:w-11/12 md:ml-12 overflow-x-auto'>
+      <div class='w-full'>
+        <table class="w-full">
+          <tbody class="bg-white">
+            <tr class="bg-gray-50">
+              <td class='text-gray-900 font-bold pl-3'>Notes</td>
+              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" align='right'><%= gun.spec.notes %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% end %>
 <% end %>
