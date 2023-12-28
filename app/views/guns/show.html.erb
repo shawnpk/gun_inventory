@@ -10,7 +10,7 @@
 
     <%= render @gun %>
 
-    <div class='mb-10 ml-10'>
+    <div class='my-10 ml-10 md:ml-12'>
       <%= link_to "Edit this gun", edit_gun_path(@gun), class: "mr-2 underline text-sm" %>
       <div class="inline-block ml-2">
         <%= button_to "Destroy this gun", gun_path(@gun), method: :delete, class: "text-red-500 text-sm underline" %>
