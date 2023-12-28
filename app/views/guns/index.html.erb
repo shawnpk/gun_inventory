@@ -29,7 +29,7 @@
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 underline"><%= link_to gun.name, gun %></td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= gun.manufacturer %></td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= gun.model %></td>
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= gun.caliber_guage %></td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-red-500"><span class='bg-red-500 text-white px-2 py-2'><%= gun.caliber_guage %></span></td>
                 <% if gun.spec.present? %>
                   <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
                     <a href="#" class="text-indigo-600 hover:text-indigo-900 underline"><%= link_to 'Edit Specs', edit_gun_spec_path(gun, gun.spec) %><span class="sr-only">, <%= gun.manufacturer %></span></a>
