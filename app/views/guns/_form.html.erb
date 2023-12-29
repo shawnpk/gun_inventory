@@ -29,7 +29,7 @@
   <div class="my-5">
     <%= form.label :gun_type %>
     <br>
-    <%= form.select :gun_type, Gun::TYPES, include_blank: true, html: { class: "w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" } %>
+    <%= form.select :gun_type, Gun::TYPES, { include_blank: true }, { class: "shadow block border border-gray-300 text-gray-900 rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-100 dark:placeholder-gray-500 dark:text-gray-900" } %>
   </div>
 
   <div class="my-5">
@@ -44,7 +44,8 @@
 
   <div class="my-5">
     <%= form.label :production_year %>
-    <%= form.number_field :production_year, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <br>
+    <%= form.select :production_year, (1900..Date.today.year), { include_blank: true }, { class: "mt-2 shadow block border border-gray-300 text-gray-900 rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-100 dark:placeholder-gray-500 dark:text-gray-900" } %>
   </div>
 
   <div class="my-5">

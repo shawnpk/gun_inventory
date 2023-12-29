@@ -1,5 +1,5 @@
 <div class="px-4 sm:px-6 lg:px-8 w-full">
-  <div class="sm:flex sm:items-center">
+  <div class="sm:flex sm:items-center mb-5">
     <div class="sm:flex-auto">
       <h1 class="text-base font-semibold leading-6 text-gray-900"></h1>
       <p class="mt-2 text-sm text-gray-700"></p>
@@ -9,7 +9,7 @@
     </div>
   </div>
   <%= search_form_for @q do |f| %>
-    <%= f.label :name_or_manufacturer_or_model_or_caliber_guage_or_gun_type_cont, 'Search by name, manufacturer, model, caliber/guage or type', class: 'block pb-1 text-gray-500' %>
+    <%= f.label :name_or_manufacturer_or_model_or_caliber_guage_or_gun_type_cont, 'Search by name, manufacturer, model, caliber/guage or type', class: 'block pb-1 text-gray-500 font-bold mb-1' %>
     <%= f.search_field :name_or_manufacturer_or_model_or_caliber_guage_or_gun_type_cont, autofocus: true, class: 'w-[100%] rounded border-gray-300' %>
 
     <% f.submit %>
@@ -39,7 +39,7 @@
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= gun.manufacturer %></td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= gun.model %></td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= gun.gun_type %></td>
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><span class='bg-red-500 text-white px-2 py-2'><%= gun.caliber_guage %></span></td>
+                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><span class='bg-red-500 text-white px-2 py-1'><%= gun.caliber_guage %></span></td>
                 <% if gun.spec.present? %>
                   <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
                     <a href="#" class="text-indigo-600 hover:text-indigo-900 underline"><%= link_to 'Edit Specs', edit_gun_spec_path(gun, gun.spec) %><span class="sr-only">, <%= gun.manufacturer %></span></a>
