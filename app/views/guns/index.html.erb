@@ -8,13 +8,21 @@
       <%= button_to 'Add gun', new_gun_path, method: :get, class: 'block rounded-md bg-gray-500 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-300 hover:text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600' %>
     </div>
   </div>
+  <%= search_form_for @q do |f| %>
+    <%= f.label :name_or_manufacturer_or_model_or_caliber_guage_or_gun_type_cont, 'Search by name, manufacturer, model, caliber/guage or type', class: 'block pb-1 text-gray-500' %>
+    <%= f.search_field :name_or_manufacturer_or_model_or_caliber_guage_or_gun_type_cont, autofocus: true, class: 'w-[100%] rounded border-gray-300' %>
+
+    <% f.submit %>
+
+    <hr class='mt-5 mb-3'>
+  <% end %>
   <div class="mt-8 flow-root">
     <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
         <table class="min-w-full divide-y divide-gray-300">
           <thead>
             <tr>
-              <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Name</th>
+              <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"><%= sort_link(@q, :name) %></th>
               <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-3">Manufacturer</th>
               <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Model</th>
               <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Caliber/Guage</th>
@@ -24,7 +32,7 @@
             </tr>
           </thead>
           <tbody class="bg-white">
-            <% current_user.guns.each do |gun| %>
+            <% @guns.each do |gun| %>
               <tr class="even:bg-gray-50">
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 underline"><%= link_to gun.name, gun %></td>
                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= gun.manufacturer %></td>

@@ -3,7 +3,8 @@ class GunsController < ApplicationController
 
   # GET /guns or /guns.json
   def index
-    @guns = current_user.guns
+    @q    = Gun.ransack(params[:q])
+    @guns = @q.result(distinct: true)
   end
 
   # GET /guns/1 or /guns/1.json
